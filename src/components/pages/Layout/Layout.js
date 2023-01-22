@@ -1,53 +1,46 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './Layout.scss'
 import SelectService from '../ServiceSelect/ServiceSelect'
 import PlaylistSelect from '../PlaylistSelect/PlaylistSelect';
+import FormContext from '../../../FormContext'
 
 const Layout = () => {
 
-	const [step, setStep] = useState(0);
+	const { page, setPage } = useContext(FormContext);
 
-	// console.log(step.step);
-
-	switch (step.step) {
+	switch (page) {
 		case 0:
 			return (
-				<div className='layout-wrapper' data-aos="fade-up">
+				<div className='layout-wrapper'>
 					<SelectService serviceType={'Source'} />
 					<div className='btn-wrapper'>
-						<button className='btn continue' onClick={() => setStep({ step: 1 })}>CONTINUE</button>
+						<button className='btn continue' onClick={() => setPage(1)}>CONTINUE</button>
 					</div>
 				</div>
 			);
 		case 1:
 			return (
-				<div className='layout-wrapper' data-aos="fade-up">
+				<div className='layout-wrapper'>
 					<SelectService serviceType={'Destination'} />
 					<div className='btn-wrapper'>
-						<button className='btn back' onClick={() => setStep({ step: 0 })}>BACK</button>
-						<button className='btn continue' onClick={() => setStep({ step: 2 })}>CONTINUE</button>
+						<button className='btn back' onClick={() => setPage(0)}>BACK</button>
+						<button className='btn continue' onClick={() => setPage(2)}>CONTINUE</button>
 					</div>
 				</div>
 			);
 		case 2:
 			return (
-				<div className='layout-wrapper' data-aos="fade-up">
+				<div className='layout-wrapper'>
 					<PlaylistSelect />
 					<div className='btn-wrapper'>
-						<button className='btn back' onClick={() => setStep({ step: 1 })}>BACK</button>
-						<button className='btn continue' onClick={() => setStep({ step: 3 })}>SUBMIT</button>
+						<button className='btn back' onClick={() => setPage(1)}>BACK</button>
+						<button className='btn continue' onClick={() => setPage(0)}>SUBMIT</button>
 					</div>
 				</div>
 			);
 		default:
-			console.log(step);
 			return (
-				<div className='layout-wrapper' data-aos="fade-up">
-					<SelectService serviceType={'Source'} />
-					<div className='btn-wrapper'>
-						<button className='btn continue' onClick={() => setStep({ step: 1 })}>CONTINUE</button>
-					</div>
-				</div>
+				<>ERROR</>
 			);
 	}
 }

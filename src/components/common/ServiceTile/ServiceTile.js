@@ -1,31 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ServiceTile.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { useState } from 'react'
+import FormContext from '../../../FormContext'
 
-const ServiceTile = ({ service, name, selectState }) => {
+const ServiceTile = ({ service, name }) => {
 
-	// const [isActive, setIsActive] = useState(false);
-
-	// const changeStyle = () => {
-	// 	if (name.name == 'spotify') {
-
-	// 	}
-	// 	// console.log(name + '-select');
-	// 	// setStyle(name.name + '-select')
-	// 	setIsActive(current => !current);
-	// }
-
-	// const test = () => {
-	// 	selected = 'spotify';
-	// 	console.log(selected);
-	// }
+	const { page, setSource, setDestination } = useContext(FormContext);
 
 	return (
 		<div
 			className='service-tile-wrapper'
 			id={name}
-			onClick={() => selectState(name)}
+			onClick={() => page === 0 ? setSource(name) : setDestination(name)}
 		>
 			<FontAwesomeIcon icon={service} className='service-logo' />
 		</div >
