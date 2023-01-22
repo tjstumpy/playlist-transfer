@@ -1,0 +1,44 @@
+@use './src/styles/variables.scss' as v;
+
+.service-tile-wrapper {
+	background-color: v.$bg-light;
+	// color: v.$txt-grey;
+	margin: 15px;
+	width: 150px;
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+
+
+	.service-logo {
+		font-size: 10em;
+		opacity: 75%;
+		transition: 0.3s;
+	}
+
+	
+}
+
+#spotify{
+	&:hover{
+		color: v.$spotify;
+	}
+
+}
+
+#spotify-select{
+	background-color: red;
+}
+
+#youtube{
+	&:hover{
+		color: v.$youtube;
+	}
+}
+
+#itunes{
+	&:hover{
+		color: v.$itunes;
+	}
+}
+

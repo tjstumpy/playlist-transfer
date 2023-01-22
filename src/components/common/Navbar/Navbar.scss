@@ -1,0 +1,11 @@
+@use 'src/styles/_variables.scss' as v;
+
+.nav-wrapper {
+	height: 8vh;
+	width: 100%;
+	background-color: v.$bg-light;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
