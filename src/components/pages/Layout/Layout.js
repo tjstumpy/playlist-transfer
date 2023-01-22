@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './Layout.scss'
-import SelectService from '../ServiceSelect/ServiceSelect'
+import ServiceSelect from '../ServiceSelect/ServiceSelect'
 import PlaylistSelect from '../PlaylistSelect/PlaylistSelect';
 import FormContext from '../../../FormContext'
 
@@ -12,7 +12,7 @@ const Layout = () => {
 		case 0:
 			return (
 				<div className='layout-wrapper'>
-					<SelectService serviceType={'Source'} />
+					<ServiceSelect serviceType={'Source'} />
 					<div className='btn-wrapper'>
 						<button className='btn continue' onClick={() => setPage(1)}>CONTINUE</button>
 					</div>
@@ -21,7 +21,7 @@ const Layout = () => {
 		case 1:
 			return (
 				<div className='layout-wrapper'>
-					<SelectService serviceType={'Destination'} />
+					<ServiceSelect serviceType={'Destination'} />
 					<div className='btn-wrapper'>
 						<button className='btn back' onClick={() => setPage(0)}>BACK</button>
 						<button className='btn continue' onClick={() => setPage(2)}>CONTINUE</button>
@@ -34,7 +34,7 @@ const Layout = () => {
 					<PlaylistSelect />
 					<div className='btn-wrapper'>
 						<button className='btn back' onClick={() => setPage(1)}>BACK</button>
-						<button className='btn continue' onClick={() => setPage(0)}>SUBMIT</button>
+						<button className='btn continue' onClick={() => setPage(0)}>TRANSFER</button>
 					</div>
 				</div>
 			);

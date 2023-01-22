@@ -1,0 +1,34 @@
+@use './src/styles/variables.scss' as v;
+
+.playlist-tile{
+	padding: 10px;
+	margin: 2em;
+	width: 20vw;
+	height: 60vh;
+	background-color: v.$bg-light;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	.service-logo{
+		font-size: 10em;
+	}
+
+	#spotify{
+		color: v.$spotify;
+	}
+	#youtube{
+		color: v.$youtube;
+	}
+	#itunes{
+		color: v.$itunes;
+	}
+}
+
+.playlist-view{
+	background-color: tomato;
+	width: 100%;
+	height: 100%;
+	margin: 2em;
+}
